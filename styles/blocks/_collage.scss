@@ -1,0 +1,42 @@
+.collage {
+  position: relative;
+  padding-block: 125px;
+
+  @include desktop {
+    padding-block: 90px;
+  }
+
+  @include tablet {
+    padding-block: 64px;
+  }
+
+  @include mobile {
+    padding-block: 33px;
+  }
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 60%;
+    background-color: var(--color-accent-yellow);
+  }
+
+  &__item {
+    position: relative;
+    z-index: 1;
+
+    &--primary {
+      width: 670px;
+      margin-right: clamp(32px, 8.25vw, 132px);
+    }
+  }
+}

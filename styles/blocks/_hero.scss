@@ -1,21 +1,26 @@
 .hero {
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: 50% 50%;
-  background-image: url("../../assets/images/hero.jpg");
-  min-height: calc(100vh - 120px);
+  position: relative;
 
   &__title {
+    @include abs-center;
+
     display: flex;
     justify-content: center;
     align-items: center;
     margin: auto;
-    min-height: calc(100vh - 120px);
-
     color: var(--color-accent-red);
-  }
-}
 
-.section__body {
-  padding-bottom: 135px;
+    @include fluid-text(120, 48);
+  }
+
+  &__image {
+    @include tablet {
+      display: none;
+    }
+  }
+
+  @include tablet {
+    height: calc(100vh - 130px);
+    background: url("../../assets/images/hero.jpg") center / cover no-repeat;
+  }
 }

@@ -19,7 +19,7 @@
 <body>
 
   <header class="header">
-    <div class="header__inner container-alt">
+    <div class="header__inner container">
       <div class="header__primary">
         <a
           class="header__logo logo"
@@ -138,7 +138,7 @@
       </div>
     </div>
       <div class="header__divider"></div>
-    <div class="header__inner container-alt">
+    <div class="header__inner container">
       <div class="header__secondary">
         <nav class="header__nav">
           <ul class="header__nav-list">
@@ -172,17 +172,100 @@
     </div>
   </header>
 
-  <main class="content container-alt" style="background-color: #fff;">
-    <section class="section container" >
+  <main class="content">
+    <div class="container">
+      <section class="section container container--narrow">
       <div class="section__body">
         <div class="hero">
           <h1 class="hero__title">Ableton</h1>
+          <img
+            alt="Presentation"
+            class="hero__image"
+            height="1080"
+            loading="lazy"
+            src="./assets/images/hero.jpg"
+            width="1333"
+          />
+        </div>
+      </div>
+      </section>
+      <section class="section container container--narrow">
+        <header class="section__header">
+          <h2 class="section__title">We make
+            <a
+              class="section__link"
+              href="https://www.ableton.com/en/live/"
+            >
+              Live
+            </a>
+            ,
+            <a
+              class="section__link"
+              href="https://www.ableton.com/en/push/"
+            >
+              Push
+            </a>
+            ,
+            <a
+              class="section__link"
+              href="https://www.ableton.com/en/note/"
+            >
+              Note
+            </a>
+            ,
+            <a
+              class="section__link"
+              href="https://www.ableton.com/en/move/"
+            >
+              Move
+            </a>
+            and
+            <a
+              class="section__link"
+              href="https://www.ableton.com/en/link/"
+            >
+              Link
+            </a>
+            — unique software and hardware for music creation and performance. With these products, our community of users creates amazing things.
+          </h2>
+          <div class="section__description">
+            <p class="section__text">Ableton was founded in 1999 and released the first version of Live in 2001. Our products are used by a community of dedicated musicians, sound designers, and artists from across the world.</p>
+          </div>
+        </header>
+      </section>
+    </div>
+    <section class="section">
+      <div class="section__body collage container">
+        <div class="collage__inner container container--narrow">
+          <div class="collage__item collage__item--primary">
+            <img
+              alt="Demonstration music bar"
+              class="collage__image"
+              height="670"
+              loading="lazy"
+              src="./assets/images/music_bar.png"
+              width="670"
+            />
+          </div>
+          <div class="collage__item collage__item--secondary">
+            <img
+              alt="Run person"
+              class="collage__image"
+              height="400"
+              loading="lazy"
+              src="./assets/images/run_person.png"
+              width="530"
+            />
+          </div>
         </div>
       </div>
     </section>
   </main>
 
-  <dialog class="mobile-overlay container-alt visible-mobile" id="mobileOverlay">
+  <dialog
+    class="mobile-overlay container visible-mobile"
+    id="mobileOverlay"
+  >
     <form class="mobile-overlay__close-button-wrapper"  method="dialog">
       <a
         class="mobile-overlay__logo logo"
