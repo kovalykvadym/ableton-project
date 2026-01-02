@@ -1,0 +1,31 @@
+{
+  "name": "ableton-project",
+  "version": "1.0.0",
+  "description": "Landing page resource ableton",
+  "keywords": [
+    "HTML",
+    "CSS",
+    "SCSS",
+    "JS",
+    "Grid",
+    "Flex",
+    "Landing",
+    "First",
+    "project"
+  ],
+  "homepage": "https://github.com/kovalykvadym/ableton-project#readme",
+  "bugs": {
+    "url": "https://github.com/kovalykvadym/ableton-project/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kovalykvadym/ableton-project.git"
+  },
+  "license": "ISC",
+  "author": "Kovalyk Vadym",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}

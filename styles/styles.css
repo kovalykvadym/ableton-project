@@ -1,0 +1,534 @@
+@charset "UTF-8";
+/**
+  Нормалізація блокової моделі
+ */
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+/**
+  Прибираємо внутрішні відступи зліва тегам списків,
+  які мають атрибут class
+ */
+:where(ul, ol):where([class]) {
+  padding-left: 0;
+}
+
+/**
+  Прибираємо зовнішні відступи body і двом іншим тегам,
+  у яких є атрибут class
+ */
+body,
+:where(blockquote, figure, fieldset):where([class]) {
+  margin: 0;
+}
+
+/**
+  Прибираємо зовнішні відступи вертикалі потрібним тегам,
+  у яких є атрибут class
+ */
+:where(h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+dl):where([class]) {
+  margin-block: 0;
+}
+
+:where(dd[class]) {
+  margin-left: 0;
+}
+
+:where(fieldset[class]) {
+  padding: 0;
+  border: none;
+}
+
+/**
+  Прибираємо стандартний маркер з маркованого списку,
+  який має атрибут class
+ */
+:where(ul[class]) {
+  list-style: none;
+}
+
+:where(address[class]) {
+  font-style: normal;
+}
+
+/**
+  Обнуляємо вертикальні зовнішні відступи параграфа,
+  оголошуємо локальну змінну для зовнішнього відступу вниз,
+  щоб уникнути взаємодії з більш складним селектором
+ */
+p {
+  --paragraphMarginBottom: 24px;
+  margin-block: 0;
+}
+
+/**
+  Зовнішній відступ вниз для параграфа без атрибута class,
+  який розташований не останнім серед своїх сусідніх елементів
+ */
+p:where(:not([class]):not(:last-child)) {
+  margin-bottom: var(--paragraphMarginBottom);
+}
+
+/**
+  Спрощуємо роботу з зображеннями та відео
+ */
+img,
+video {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/**
+  Успадковуємо властивості шрифту для полів введення
+ */
+input,
+textarea,
+select,
+button {
+  font: inherit;
+}
+
+html {
+  /**
+    Зійде на користь у більшості ситуацій
+    (коли, наприклад, потрібно буде «притиснути» футер до низу сайту)
+   */
+  height: 100%;
+  /**
+    Прибираємо стрибок інтерфейсу по горизонталі
+    при появі / зникненні скроллбара
+   */
+  scrollbar-gutter: stable;
+  /**
+    Плавний скрол
+   */
+  scroll-behavior: smooth;
+}
+
+body {
+  /**
+    Згодиться в більшості ситуацій
+    (коли, наприклад, потрібно буде «притиснути» футер до низу сайту)
+   */
+  min-height: 100%;
+  /**
+    Уніфікований інтерліньяж
+   */
+  line-height: 1.5;
+}
+
+/**
+  Нормалізація висоти елемента посилання під час його перевірки в DevTools
+ */
+a:where([class]) {
+  display: inline-flex;
+}
+
+/**
+  Курсор-рука при наведенні на елемент
+ */
+button,
+label {
+  cursor: pointer;
+}
+
+/**
+  Прибирає сіре підсвічування при тапі на мобільних пристроях (iOS/Android)
+ */
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/**
+  Приводимо до єдиного кольору svg-елементи
+  (за винятком тих, у яких вже вказано
+  атрибут fill із значенням “none” або починається з “url”)
+ */
+:where([fill]:not([fill=none],
+[fill^=url])) {
+  fill: currentColor;
+}
+
+/**
+  Приводимо до єдиного кольору svg-елементи
+  (за винятком тих, у яких вже вказано
+  атрибут stroke зі значенням “none”)
+ */
+:where([stroke]:not([stroke=none],
+[stroke^=url])) {
+  stroke: currentColor;
+}
+
+/**
+  Виправляємо баг затримки зміни кольору при взаємодії з svg-елементами
+ */
+svg * {
+  transition-property: fill, stroke;
+}
+
+/**
+  Приведення рамок таблиць до класичного вигляду 'collapse'
+ */
+:where(table) {
+  border-collapse: collapse;
+  border-color: currentColor;
+}
+
+/**
+  Видаляємо всі анімації та переходи для людей,
+  які вважають за краще їх не використовувати
+ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("../assets/fonts/Roboto-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+:root {
+  /* Base colors */
+  --color-black: #000000;
+  --color-white: #FFFFFF;
+  --color-white-alt: #FEFEFE;
+  /* Grayscale */
+  --color-gray-100: #F3F3F3;
+  --color-gray-200: #EFEFEF;
+  --color-gray-300: #EEEEEE;
+  --color-gray-400: #BFBFBF;
+  --color-gray-500: #B6FFC0;
+  --color-gray-600: #666666;
+  --color-gray-700: #444444;
+  /* Primary / Brand */
+  --color-primary-blue: #0000FF;
+  --color-primary-indigo: #5865F2;
+  --color-primary-light: #B1C5FF;
+  /* Accent colors */
+  --color-accent-cyan: #00F2EA;
+  --color-accent-orange: #FF764D;
+  --color-accent-red: #FD5948;
+  --color-accent-red-strong: #FF0302;
+  --color-accent-pink: #FF004F;
+  --color-accent-yellow: #FBFFA7;
+  --color-accent-green: #B6FFC0;
+  --color-accent-purple: #D5B3FF;
+  /* Utility */
+  --color-bg-light: #F3F3F3;
+  --color-bg-lighter: #EFEFEF;
+  --border: 1px solid transparent;
+  --font-family-base: "Roboto", sans-serif;
+  --container-width: 1333px;
+  --container-width-alt: 1520px;
+  --container-padding-x: 32px;
+  --container-padding-x-alt: 40px;
+  --section-padding-y: 70px;
+  --input-height: 42px;
+  --button-height: 42px;
+  --transition-duration: 0.2s;
+}
+
+.container {
+  max-width: calc(var(--container-width) + var(--container-padding-x) * 2);
+  margin-inline: auto;
+  padding-inline: var(--container-padding-x);
+}
+@media (max-width: 767px) {
+  .container {
+    --container-padding-x: 0;
+  }
+}
+
+.container-alt {
+  max-width: calc(var(--container-width-alt) + var(--container-padding-x-alt) * 2);
+  margin-inline: auto;
+  padding-inline: var(--container-padding-x-alt);
+}
+@media (max-width: 767px) {
+  .container-alt {
+    --container-padding-x-alt: 20px;
+  }
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  border: 0 !important;
+  padding: 0 !important;
+  white-space: nowrap !important;
+  clip-path: inset(100%) !important;
+  clip: rect(0 0 0 0) !important;
+  overflow: hidden !important;
+}
+
+@media (max-width: 767px) {
+  .hidden-mobile {
+    display: none !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .visible-mobile {
+    display: none !important;
+  }
+}
+
+body {
+  font-size: clamp(14px, 1.125vw, 18px);
+  font-family: var(--font-family-base);
+  font-weight: 500;
+  line-height: 1.75;
+  color: var(--color-black);
+  background-color: var(--color-white);
+}
+
+a, button, input, textarea, svg * {
+  transition-duration: var(--transition-duration);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1 {
+  font-size: clamp(48px, 6.5625vw, 105px);
+}
+
+h2 {
+  font-size: clamp(18px, 1.6875vw, 27px);
+}
+
+.is-active {
+  color: var(--color-accent-orange);
+}
+
+body {
+  background-color: var(--color-gray-300);
+}
+
+dialog {
+  padding: 0;
+}
+
+.burger-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 9px;
+  border: none;
+  background-color: transparent;
+  font-size: 18px;
+}
+.burger-button::after {
+  content: "";
+  width: 0;
+  height: 0;
+  margin: 0;
+  border-top: 5px solid var(--color-black);
+  border-right: 5px solid transparent;
+  border-bottom: 0 solid transparent;
+  border-left: 5px solid transparent;
+}
+
+.header__inner {
+  background-color: var(--color-white);
+}
+.header__primary {
+  display: flex;
+  gap: 40px;
+  padding-block: 20px;
+}
+@media (max-width: 1023px) {
+  .header__primary {
+    gap: 20px;
+  }
+}
+@media (max-width: 767px) {
+  .header__primary {
+    gap: 32px;
+  }
+}
+.header__menu {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+.header__menu-list {
+  display: flex;
+  gap: 40px;
+}
+.header__menu-list-alt {
+  gap: 30px;
+}
+@media (max-width: 1280px) {
+  .header__menu-list {
+    gap: 30px;
+  }
+}
+@media (max-width: 1023px) {
+  .header__menu-list {
+    gap: 10px;
+  }
+}
+.header__menu-item {
+  display: flex;
+  justify-items: center;
+  align-items: center;
+}
+.header__menu-link {
+  display: flex;
+  justify-items: center;
+  align-items: center;
+}
+.header__menu-link--accent {
+  color: var(--color-primary-blue);
+}
+.header__menu-link--small {
+  font-size: clamp(12px, 0.875vw, 14px);
+}
+.header__menu-button {
+  padding: 0;
+  margin: 0;
+  background-color: transparent;
+  border: none;
+}
+.header__divider {
+  height: 2px;
+  background-color: var(--color-gray-300);
+}
+.header__secondary {
+  padding-block: 23px;
+}
+@media (max-width: 1280px) {
+  .header__secondary {
+    padding-block: 20px;
+  }
+}
+.header__nav-list {
+  display: flex;
+  gap: 40px;
+}
+@media (max-width: 1280px) {
+  .header__nav-list {
+    gap: 30px;
+  }
+}
+@media (max-width: 1023px) {
+  .header__nav-list {
+    gap: 15px;
+  }
+}
+.header__nav-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header__nav-link {
+  font-size: clamp(13px, 0.9375vw, 15px);
+}
+
+.mobile-overlay {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  border: none;
+  background-color: var(--color-primary-blue);
+}
+.mobile-overlay:modal {
+  max-width: 100%;
+  max-height: 100%;
+}
+.mobile-overlay__close-button-wrapper {
+  display: flex;
+  gap: 40px;
+  padding-block: 20px;
+}
+@media (max-width: 1023px) {
+  .mobile-overlay__close-button-wrapper {
+    gap: 20px;
+  }
+}
+@media (max-width: 767px) {
+  .mobile-overlay__close-button-wrapper {
+    gap: 32px;
+  }
+}
+.mobile-overlay__close-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 9px;
+  border: none;
+  background-color: transparent;
+  font-size: 18px;
+  color: var(--color-white);
+}
+.mobile-overlay__close-button::after {
+  content: "";
+  width: 0;
+  height: 0;
+  margin: 0;
+  filter: invert(1);
+  border-top: 0 solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid var(--color-black);
+  border-left: 5px solid transparent;
+}
+.mobile-overlay__image {
+  filter: invert(1);
+}
+.mobile-overlay__list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+.mobile-overlay__link {
+  color: var(--color-white);
+  font-size: 20px;
+}
+
+.hero {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-image: url("../../assets/images/hero.jpg");
+  min-height: calc(100vh - 120px);
+}
+.hero__title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  min-height: calc(100vh - 120px);
+  color: var(--color-accent-red);
+}
+
+.section__body {
+  padding-bottom: 135px;
+}
+
+/*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,49 @@
+:root {
+  /* Base colors */
+  --color-black: #000000;
+  --color-white: #FFFFFF;
+  --color-white-alt: #FEFEFE;
+
+  /* Grayscale */
+  --color-gray-100: #F3F3F3;
+  --color-gray-200: #EFEFEF;
+  --color-gray-300: #EEEEEE;
+  --color-gray-400: #BFBFBF;
+  --color-gray-500: #B6FFC0;
+  --color-gray-600: #666666;
+  --color-gray-700: #444444;
+
+  /* Primary / Brand */
+  --color-primary-blue: #0000FF;
+  --color-primary-indigo: #5865F2;
+  --color-primary-light: #B1C5FF;
+
+  /* Accent colors */
+  --color-accent-cyan: #00F2EA;
+  --color-accent-orange: #FF764D;
+  --color-accent-red: #FD5948;
+  --color-accent-red-strong: #FF0302;
+  --color-accent-pink: #FF004F;
+  --color-accent-yellow: #FBFFA7;
+  --color-accent-green: #B6FFC0;
+  --color-accent-purple: #D5B3FF;
+
+  /* Utility */
+  --color-bg-light: #F3F3F3;
+  --color-bg-lighter: #EFEFEF;
+
+  --border: 1px solid transparent;
+  --font-family-base: "Roboto", sans-serif;
+
+  --container-width: 1333px;
+  --container-width-alt: 1520px;
+  --container-padding-x: 32px;
+  --container-padding-x-alt: 40px;
+
+  --section-padding-y: 70px;
+
+  --input-height: 42px;
+  --button-height: 42px;
+
+  --transition-duration: 0.2s;
+}

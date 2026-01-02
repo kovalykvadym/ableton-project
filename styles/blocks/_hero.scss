@@ -1,0 +1,21 @@
+.hero {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-image: url("../../assets/images/hero.jpg");
+  min-height: calc(100vh - 120px);
+
+  &__title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    min-height: calc(100vh - 120px);
+
+    color: var(--color-accent-red);
+  }
+}
+
+.section__body {
+  padding-bottom: 135px;
+}

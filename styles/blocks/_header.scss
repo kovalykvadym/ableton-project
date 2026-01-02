@@ -1,0 +1,105 @@
+.header {
+  &__inner {
+    background-color: var(--color-white);
+  }
+  &__primary {
+    display: flex;
+    gap: 40px;
+    padding-block: 20px;
+
+    @include tablet {
+      gap: 20px;
+    }
+
+    @include mobile {
+      gap: 32px;
+    }
+  }
+
+  &__menu {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    &-list {
+      display: flex;
+      gap: 40px;
+      &-alt {
+        gap: 30px;
+      }
+
+      @include desktop {
+        gap: 30px;
+      }
+
+      @include tablet {
+        gap: 10px;
+      }
+    }
+
+    &-item {
+      display: flex;
+      justify-items: center;
+      align-items: center;
+    }
+
+    &-link {
+      display: flex;
+      justify-items: center;
+      align-items: center;
+
+      &--accent {
+        color: var(--color-primary-blue);
+      }
+
+      &--small {
+        @include fluid-text(14, 12);
+      }
+    }
+
+    &-button {
+      padding: 0;
+      margin: 0;
+      background-color: transparent;
+      border: none;
+    }
+  }
+
+  &__divider {
+    height: 2px;
+    background-color: var(--color-gray-300);
+  }
+
+  &__secondary {
+    padding-block: 23px;
+
+    @include desktop {
+      padding-block: 20px;
+    }
+  }
+
+  &__nav{
+    &-list {
+      display: flex;
+      gap: 40px;
+
+      @include desktop {
+        gap: 30px;
+      }
+
+      @include tablet {
+        gap: 15px;
+      }
+    }
+
+    &-item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+    }
+
+    &-link {
+      @include fluid-text(15, 13);
+    }
+  }
+}
