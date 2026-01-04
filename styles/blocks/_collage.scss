@@ -35,8 +35,48 @@
     z-index: 1;
 
     &--primary {
+      display: flex;
+      flex-direction: column;
+      row-gap: 133px;
+
+      @include desktop {
+        row-gap: 85px;
+      }
+
+      @include tablet {
+        row-gap: 64px;
+      }
+
+      @include mobile {
+        row-gap: 33px;
+      }
+
       width: 670px;
       margin-right: clamp(32px, 8.25vw, 132px);
+    }
+  }
+
+  &--left {
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: 60%;
+      background-color: var(--color-accent-green);
+    }
+  }
+
+  &--center {
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 20%;
+      width: 60%;
+      background-color: var(--color-accent-purple);
     }
   }
 }

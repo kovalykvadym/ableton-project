@@ -1,0 +1,62 @@
+.grid {
+  &__body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-primary-light);
+  }
+
+  &__image {
+    background-image: url("../../assets/images/discuss-with-people-alt.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: auto;
+    aspect-ratio: 1;
+  }
+
+  &__wrapper {
+    display: inline-flex;
+    flex-direction: column;
+    row-gap: 32px;
+    max-width: clamp(260px, 30vw, 400px);
+    margin: 32px;
+
+    @include tablet {
+      padding-block: 64px;
+      max-width: clamp(255px, 80vw, 682px);
+      row-gap: 22px;
+    }
+
+    @include mobile {
+      padding-block: 32px;
+    }
+  }
+
+  &__link {
+    @include fluid-text(26, 17);
+
+    display: flex;
+    align-items: center;
+    color: var(--color-primary-blue);
+
+    &::after {
+      content: "";
+      width: 9px;
+      height: 9px;
+      padding-left: 5px;
+      border-top: 2px solid var(--color-primary-blue);
+      border-right: 2px solid var(--color-primary-blue);
+      transform: rotate(45deg);
+
+      @include tablet {
+        width: 6px;
+        height: 6px;
+        padding-left: 5px;
+        border-top: 2px solid var(--color-primary-blue);
+        border-right: 2px solid var(--color-primary-blue);
+      }
+
+    }
+  }
+}

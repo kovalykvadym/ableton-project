@@ -1,0 +1,11 @@
+.socials {
+  &__item {
+    @include desktop {
+      @include square(24px);
+    }
+
+    @include tablet {
+      @include square(32px);
+    }
+  }
+}

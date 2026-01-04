@@ -1,0 +1,147 @@
+.footer {
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    row-gap: 75px;
+    padding-block: 135px;
+
+    @include tablet {
+      padding-block: 62px;
+      row-gap: 32px;
+    }
+
+    @include mobile {
+      padding-block: 32px;
+    }
+  }
+
+  &__body {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1.335fr;
+    grid-template-rows: repeat(2, 1fr);
+    row-gap: 72px;
+
+    @include tablet {
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr;
+      row-gap: 32px;
+    }
+  }
+
+  &__socials {
+    display: flex;
+    column-gap: 12px;
+
+    @include tablet {
+      column-gap: 8px;
+    }
+  }
+
+  &__block {
+    display: flex;
+    flex-direction: column;
+    &--gap-18 {
+      row-gap: 18px;
+    }
+
+    &--newsletter {
+      &> form:last-child {
+        margin-top: 22px;
+      }
+
+      @include tablet {
+        order: -1;
+      }
+    }
+  }
+
+  &__form {
+    display: grid;
+    grid-template-columns: auto 22.5%;
+
+  }
+
+  &__input {
+    @include reset-button;
+
+    background-color: var(--color-gray-300);
+    padding-left: 15px;
+  }
+
+  &__button {
+    @include reset-button;
+    background-color: var(--color-primary-blue);
+    color: var(--color-white);
+    padding-block: 8px;
+    box-sizing: content-box;
+
+    &:hover {
+      background-color: var(--color-white);
+      color: var(--color-primary-blue);
+      border: 1px solid var(--color-primary-blue);
+
+    }
+  }
+
+  &__select {
+    @include reset-button;
+    background-color: var(--color-gray-300);
+    padding: 6px 11px;
+  }
+
+  &__title {
+    &--padding {
+      padding-bottom: 11px;
+    }
+  }
+
+  &__extra {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &-list {
+      display: flex;
+      align-items: center;
+      column-gap: 14px;
+
+      @include tablet {
+        flex-direction: column;
+        align-items: start;
+      }
+    }
+
+    &-link {
+      font-size: 12px;
+    }
+
+    @include tablet {
+      flex-direction: column;
+      align-items: start;
+      row-gap: 74px;
+    }
+  }
+
+  &__label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 14px;
+
+    &-image {
+      @include tablet {
+        order: -1;
+      }
+    }
+  }
+
+  &__link {
+    @include fluid-text(17, 13);
+  }
+
+  &__logo {
+    @include tablet {
+      width: 122px;
+      height: 30px;
+    }
+  }
+}

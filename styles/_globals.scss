@@ -3,7 +3,7 @@ body {
 
   font-family: var(--font-family-base);
   font-weight: 500;
-  line-height: 1.7;
+  line-height: 1.75;
   color: var(--color-black);
   background-color: var(--color-white);
 }
@@ -26,6 +26,11 @@ h2 {
   @include fluid-text(27, 17);
 
   line-height: 1.55;
+}
+
+h3 {
+  @include fluid-text(17, 14);
+  line-height: 1.75;
 }
 
 .is-active {
