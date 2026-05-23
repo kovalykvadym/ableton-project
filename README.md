@@ -8,8 +8,7 @@
 сучасної, семантичної та адаптивної верстки з використанням методології BEM та
 препроцесора SCSS.
 
-🔗 **[Подивитися демо]** (Вставте сюди посилання на GitHub Pages, коли
-опублікуєте)
+🔗 **[Подивитися демо]** https://kovalykvadym.github.io/ableton-project/
 
 ## 🛠 Технічний стек
 
@@ -80,7 +79,7 @@
 1. **Клонуйте репозиторій:**
 
 ```bash 
-git clone [https://github.com/kovalykvadym/ableton-project.git](https://github.com/kovalykvadym/ableton-project.git)
+git clone https://github.com/kovalykvadym/ableton-project
 ```
 
 2. **Відкрийте проєкт:**
